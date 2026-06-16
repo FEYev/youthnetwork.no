@@ -478,3 +478,20 @@ dd a { color: #146ea0; }
 @media (max-width: 680px) {
   .cta-band .btn { width: auto; }
 }
+/* Hide Google Translate UI */
+#google_translate_element,
+.goog-te-banner-frame,
+.goog-te-balloon-frame,
+.goog-te-gadget,
+.goog-logo-link,
+.goog-te-combo {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+body > .skiptranslate {
+  display: none !important;
+}
