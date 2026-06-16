@@ -1,12 +1,12 @@
 /**
  * Youth Network — Auto-translate system
- * - Default: Norwegian (NO)
- * - EN butonuna basınca MyMemory API ile otomatik çeviri yapar
- * - Çeviriler cache'lenir (localStorage), tekrar API çağrısı yapmaz
- * - NO butonuna basınca orijinal Norveççe'ye döner
  */
 
-const CACHE_KEY = "yn_translation_cache_en";
+const PAGE_KEY = window.location.pathname.endsWith("/")
+  ? "index.html"
+  : window.location.pathname.split("/").pop();
+
+const CACHE_KEY = "yn_translation_cache_en_" + PAGE_KEY;
 const LANG_KEY  = "yn_lang";
 
 /* ---------- Collect all translatable text nodes ---------- */
