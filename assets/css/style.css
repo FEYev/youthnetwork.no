@@ -495,3 +495,34 @@ body {
 body > .skiptranslate {
   display: none !important;
 }
+.project-photo-card {
+  background: linear-gradient(135deg, rgba(156, 26, 167, 0.12), rgba(0, 167, 157, 0.12));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: 28px;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.project-photo-card img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .project-photo-card {
+    min-height: 260px;
+    padding: 22px;
+  }
+
+  .project-photo-card img {
+    max-width: 260px;
+  }
+}
