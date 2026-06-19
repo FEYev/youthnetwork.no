@@ -526,3 +526,35 @@ body > .skiptranslate {
     max-width: 260px;
   }
 }
+@media (max-width: 768px) {
+  .hero-visual,
+  .hero-card,
+  .hero-logo-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-visual .logo-showcase,
+  .hero-card .logo-showcase,
+  .hero-logo-card .logo-showcase {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-visual img,
+  .hero-card img,
+  .hero-logo-card img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}@media (max-width: 768px) {
+  .hero-visual {
+    max-width: 360px;
+    margin-top: 2rem;
+  }
+}
