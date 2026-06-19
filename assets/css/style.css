@@ -581,3 +581,34 @@ body > .skiptranslate {
     border-radius: 20px;
   }
 }
+/* Language flag buttons */
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-btn {
+  min-width: 46px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-btn .flag-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.lang-divider {
+  font-weight: 800;
+  opacity: 0.45;
+}
+
+.lang-btn.active {
+  background: #20242c;
+  color: #fff;
+}
