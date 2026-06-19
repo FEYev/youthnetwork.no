@@ -581,68 +581,53 @@ body > .skiptranslate {
     border-radius: 20px;
   }
 }
-/* Language flag buttons */
+/* Language switch as flags */
 .language-switch {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
-.lang-btn {
-  min-width: 46px;
-  height: 40px;
-  padding: 0 12px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lang-btn .flag-icon {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.lang-divider {
-  font-weight: 800;
-  opacity: 0.45;
-}
-
-.lang-btn.active {
-  background: #20242c;
-  color: #fff;
-}
-/* Language flag buttons */
-.language-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.lang-btn {
+.language-switch .lang-btn {
+  width: 48px;
+  height: 38px;
   min-width: 48px;
-  height: 40px;
-  padding: 0 10px;
+  padding: 0;
   border-radius: 999px;
+  font-size: 0 !important;
+  line-height: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.flag-svg {
-  width: 26px;
-  height: 18px;
+.language-switch .lang-btn::before {
+  content: "";
+  width: 28px;
+  height: 20px;
   display: block;
-  border-radius: 3px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.18);
 }
 
-.lang-divider {
+/* Norway flag */
+.language-switch .lang-btn:first-of-type::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 16'%3E%3Crect width='22' height='16' fill='%23BA0C2F'/%3E%3Crect y='6' width='22' height='4' fill='white'/%3E%3Crect x='6' width='4' height='16' fill='white'/%3E%3Crect y='7' width='22' height='2' fill='%2300205B'/%3E%3Crect x='7' width='2' height='16' fill='%2300205B'/%3E%3C/svg%3E");
+}
+
+/* UK flag */
+.language-switch .lang-btn:last-of-type::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Crect width='60' height='36' fill='%23012169'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='white' stroke-width='7'/%3E%3Cpath d='M0 0L60 36M60 0L0 36' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v36M0 18h60' stroke='white' stroke-width='12'/%3E%3Cpath d='M30 0v36M0 18h60' stroke='%23C8102E' stroke-width='7'/%3E%3C/svg%3E");
+}
+
+.language-switch .lang-divider {
   font-weight: 800;
-  opacity: 0.45;
+  opacity: .45;
 }
 
-.lang-btn.active {
+.language-switch .lang-btn.active {
   background: #20242c;
-  color: #fff;
 }
