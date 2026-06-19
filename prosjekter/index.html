@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prosjekter og samarbeid: hva Youth Network kan bidra med i lokale, nasjonale og internasjonale ungdomsinitiativer.">
+  <title>Prosjekter og samarbeid | Youth Network</title>
+  <link rel="icon" href="/assets/img/logo.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <style>
+    .project-spotlight {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .project-visual-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 28px;
+      min-height: 320px;
+      background: radial-gradient(circle at 20% 15%, rgba(156, 26, 167, .26), transparent 34%),
+                  radial-gradient(circle at 90% 30%, rgba(15, 154, 212, .24), transparent 32%),
+                  radial-gradient(circle at 25% 90%, rgba(58, 174, 83, .22), transparent 36%),
+                  #14141a;
+      color: #fff;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .16);
+    }
+
+    .project-visual-card img {
+      width: 145px;
+      height: 145px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .25));
+    }
+
+    .project-visual-card p {
+      color: rgba(255, 255, 255, .82);
+      max-width: 38rem;
+    }
+
+    .project-mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .project-mini-tags span {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .18);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .capacity-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .capacity-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid rgba(20, 20, 26, .08);
+      box-shadow: 0 10px 26px rgba(20, 20, 26, .06);
+    }
+
+    .capacity-icon {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(156, 26, 167, .14), rgba(15, 154, 212, .14));
+      font-weight: 900;
+      color: #9c1aa7;
+    }
+
+    .capacity-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+    }
+
+    .capacity-item p {
+      margin: 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .process-card {
+      position: relative;
+      padding: 24px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid rgba(20, 20, 26, .08);
+      box-shadow: 0 12px 30px rgba(20, 20, 26, .06);
+    }
+
+    .process-card::before {
+      content: attr(data-step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      background: #14141a;
+      color: #fff;
+      font-weight: 800;
+      font-size: .9rem;
+    }
+
+    .cooperation-note {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .project-stat-line {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .project-stat-line div {
+      padding: 15px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    @media (max-width: 860px) {
+      .project-spotlight,
+      .cooperation-note,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-visual-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body data-title-key="meta.projectsTitle">
+  
+<header class="site-header">
+  <a class="skip-link" href="#main" data-i18n="skip.content">Hopp til innhold</a>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Youth Network home">
+      <img src="/assets/img/logo.png" alt="Youth Network logo" class="brand-logo">
+      <span class="brand-text" data-i18n="site.name">Youth Network</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span data-i18n="nav.menu">Meny</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a class="nav-link" href="/" data-i18n="nav.home">Hjem</a><a class="nav-link" href="/om-oss/" data-i18n="nav.about">Om oss</a><a class="nav-link" href="/fokusomrader/" data-i18n="nav.focus">Fokusområder</a><a class="nav-link active" href="/prosjekter/" data-i18n="nav.projects" aria-current="page">Prosjekter</a><a class="nav-link" href="/nyheter/" data-i18n="nav.news">Nyheter</a><a class="nav-link" href="/arrangementer/" data-i18n="nav.events">Arrangementer</a><a class="nav-link" href="/kontakt/" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+<div class="language-switch" aria-label="Language switch">
+  <button type="button" class="lang-btn active" onclick="setLanguage('no')">NO</button>
+  <span class="lang-divider">|</span>
+  <button type="button" class="lang-btn" onclick="setLanguage('en')">EN</button>
+</div>
+  </div>
+</header>
+
+  <main id="main">
+    
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <p class="kicker" data-i18n="projects.hero.kicker">Prosjekter og samarbeid</p>
+    <h1 data-i18n="projects.hero.title">Hva Youth Network kan bidra med</h1>
+    <p class="lead" data-i18n="projects.hero.text">Youth Network er en ung organisasjon, men ikke en tom idé. Vi utvikler lokale og internasjonale ungdomsinitiativer og ønsker samarbeid der unge får delta aktivt, lære praktisk og bidra i sine lokalsamfunn.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container project-spotlight">
+    <div>
+      <div class="section-heading left">
+        <h2 data-i18n="projects.cooperation.title">Samarbeid i praksis</h2>
+        <p data-i18n="projects.cooperation.text">
+          Youth Network ønsker å bidra i ungdomsrettede aktiviteter og samarbeid der unge får en aktiv rolle. Vi kan støtte prosjekter og lokale initiativer med deltakeroppfølging, praktiske læringsaktiviteter, kommunikasjon og tematisk innhold innen bærekraft, inkludering og ungdomsmedvirkning.
+        </p>
+      </div>
+
+      <div class="capacity-list">
+        <article class="capacity-item">
+          <span class="capacity-icon" aria-hidden="true">01</span>
+          <div>
+            <h3 data-i18n="projects.cooperation.card1.title">Ungdomsdeltakelse</h3>
+            <p data-i18n="projects.cooperation.card1.text">
+              Vi kan bidra med rekruttering, forberedelse og oppfølging av unge deltakere før, under og etter aktiviteter.
+            </p>
+          </div>
+        </article>
+
+        <article class="capacity-item">
+          <span class="capacity-icon" aria-hidden="true">02</span>
+          <div>
+            <h3 data-i18n="projects.cooperation.card2.title">Praktisk læring</h3>
+            <p data-i18n="projects.cooperation.card2.text">
+              Vi legger vekt på enkle, konkrete og deltakende metoder som workshops, refleksjonsøvelser, gruppearbeid og ikke-formell læring.
+            </p>
+          </div>
+        </article>
+
+        <article class="capacity-item">
+          <span class="capacity-icon" aria-hidden="true">03</span>
+          <div>
+            <h3 data-i18n="projects.cooperation.card3.title">Lokal forankring i Norge</h3>
+            <p data-i18n="projects.cooperation.card3.text">
+              Youth Network kan bidra til å koble prosjektideer med unge, frivillige miljøer og relevante lokale aktører i Norge.
+            </p>
+          </div>
+        </article>
+
+        <article class="capacity-item">
+          <span class="capacity-icon" aria-hidden="true">04</span>
+          <div>
+            <h3 data-i18n="projects.cooperation.card4.title">Synliggjøring og videreføring</h3>
+            <p data-i18n="projects.cooperation.card4.text">
+              Vi kan støtte synliggjøring gjennom nettside, sosiale medier, deltakerhistorier, enkel dokumentasjon og deling av resultater.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <aside class="project-photo-card" aria-label="Youth Network visual placeholder">
+      <img src="/assets/img/logo.png" alt="Youth Network logo">
+    </aside>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-heading left">
+      <h2 data-i18n="projects.contribute.title">Hva vi kan bidra med i prosjekter</h2>
+      <p data-i18n="projects.contribute.text">Youth Network kan ta konkrete roller før, under og etter aktiviteter. Vi ønsker særlig samarbeid der oppgaver er tydelige, ambisjonene realistiske og unge mennesker får en aktiv rolle.</p>
+    </div>
+
+    <div class="card-grid three">
+      <article class="card">
+        <h3 data-i18n="projects.contribute.card1.title">Deltakerrekruttering og forberedelse</h3>
+        <p data-i18n="projects.contribute.card1.text">Vi kan bidra til å nå unge i Norge, informere om muligheter, forberede deltakere og følge dem opp før aktiviteten starter.</p>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="projects.contribute.card2.title">Praktiske læringsaktiviteter</h3>
+        <p data-i18n="projects.contribute.card2.text">Vi kan utvikle og støtte workshops, ungdomsmøter, refleksjonsøkter og aktiviteter basert på ikke-formell læring.</p>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="projects.contribute.card3.title">Bærekraft og zero waste</h3>
+        <p data-i18n="projects.contribute.card3.text">Vi kan bidra med temaer som ansvarlig forbruk, zero waste, bærekraftig mat, kjøkkenbasert læring og lokale miljøhandlinger.</p>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="projects.contribute.card4.title">Inkludering og trygge grupper</h3>
+        <p data-i18n="projects.contribute.card4.text">Vi legger vekt på deltakelse, trygg gruppedynamikk, interkulturell forståelse og aktiviteter der ulike unge kan bidra på egne premisser.</p>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="projects.contribute.card5.title">Kommunikasjon og synlighet</h3>
+        <p data-i18n="projects.contribute.card5.text">Vi kan støtte formidling gjennom nettside, sosiale medier, enkle visuelle materialer, deltakerhistorier og deling av resultater.</p>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="projects.contribute.card6.title">Oppfølging og lokal effekt</h3>
+        <p data-i18n="projects.contribute.card6.text">Vi ønsker at prosjekter ikke slutter når aktiviteten er over. Oppfølging, refleksjon og små lokale handlinger kan gi bedre effekt for deltakerne.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container cooperation-note">
+    <article class="accent-panel">
+      <p class="kicker" data-i18n="projects.impact.kicker">Bærekraft og lokalsamfunn</p>
+      <h2 data-i18n="projects.impact.title">Prosjekter bør gi mening i hverdagen</h2>
+      <p data-i18n="projects.impact.text1">For Youth Network handler bærekraft ikke bare om store ord. Vi er interessert i aktiviteter der unge kan prøve ut konkrete løsninger: lage mat med mindre avfall, forstå forbruksvaner, dele ressurser, planlegge små miljøhandlinger og se hvordan egne valg påvirker fellesskapet.</p>
+      <p data-i18n="projects.impact.text2">Denne tilnærmingen kan brukes i lokale workshops, ungdomsutvekslinger, skole- og frivillighetssamarbeid eller andre initiativer der praktisk læring passer bedre enn lange foredrag.</p>
+    </article>
+
+    <div>
+      <div class="section-heading left">
+        <h2 data-i18n="projects.themes.title">Temaer vi ønsker å utvikle videre</h2>
+        <p data-i18n="projects.themes.text">Vi er åpne for samarbeid på flere nivåer, ikke bare Erasmus+. Lokale, nasjonale og internasjonale initiativer kan alle være relevante dersom de passer med organisasjonens formål.</p>
+      </div>
+      <ul class="check-list">
+        <li data-i18n="projects.themes.item1">Ungdomsdeltakelse og aktivt medborgerskap.</li>
+        <li data-i18n="projects.themes.item2">Bærekraft, zero waste og ansvarlig forbruk.</li>
+        <li data-i18n="projects.themes.item3">Mat, kjøkkenbasert læring og praktiske workshops.</li>
+        <li data-i18n="projects.themes.item4">Trivsel, psykisk helsebevissthet og personlig utvikling.</li>
+        <li data-i18n="projects.themes.item5">Entreprenørskap, initiativtaking og problemløsning.</li>
+        <li data-i18n="projects.themes.item6">Sosial inkludering og interkulturell dialog.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-heading left">
+      <h2 data-i18n="projects.dissemination.title">Kommunikasjon og formidlingsplan</h2>
+      <p data-i18n="projects.dissemination.text">God formidling gjør prosjekter mer synlige og mer nyttige. Youth Network kan bidra med enkel, realistisk og regelmessig kommunikasjon gjennom hele prosjektperioden.</p>
+    </div>
+
+    <div class="process-grid">
+      <article class="process-card" data-step="1">
+        <h3 data-i18n="projects.dissemination.card1.title">Før aktiviteten</h3>
+        <p data-i18n="projects.dissemination.card1.text">Informasjon til unge, partnerpresentasjon, enkel rekrutteringskommunikasjon og tydelige forventninger til deltakere.</p>
+      </article>
+
+      <article class="process-card" data-step="2">
+        <h3 data-i18n="projects.dissemination.card2.title">Under aktiviteten</h3>
+        <p data-i18n="projects.dissemination.card2.text">Bilder der det er samtykke, korte oppdateringer, deltakerrefleksjoner og synliggjøring av læringsprosessen.</p>
+      </article>
+
+      <article class="process-card" data-step="3">
+        <h3 data-i18n="projects.dissemination.card3.title">Etter aktiviteten</h3>
+        <p data-i18n="projects.dissemination.card3.text">Nyhetssaker, sosiale medier, deling av resultater, lokal oppfølging og korte historier om hva deltakerne tar med seg videre.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container project-columns">
+    <article class="project-panel">
+      <h2 data-i18n="projects.approach.title">Vår samarbeidsmåte</h2>
+      <p data-i18n="projects.approach.text1">Vi foretrekker tydelig kommunikasjon, realistisk oppgavefordeling og ærlig planlegging. Som organisasjon i utvikling er det viktig for oss å ikke love mer enn vi kan levere.</p>
+      <p data-i18n="projects.approach.text2">Samtidig ønsker vi å være aktive, tilgjengelige og praktiske i samarbeid: forberede deltakere godt, bidra til godt innhold og følge opp avtalt ansvar.</p>
+    </article>
+
+    <article class="project-panel">
+      <h2 data-i18n="projects.opportunities.title">Aktuelle samarbeidsmuligheter</h2>
+      <ul class="check-list">
+        <li data-i18n="projects.opportunities.item1">Lokale ungdomsaktiviteter i Norge.</li>
+        <li data-i18n="projects.opportunities.item2">Workshops om bærekraft, mat, forbruk og zero waste.</li>
+        <li data-i18n="projects.opportunities.item3">Ungdomsutvekslinger og internasjonale læringsaktiviteter.</li>
+        <li data-i18n="projects.opportunities.item4">Kommunikasjons- og formidlingssamarbeid.</li>
+        <li data-i18n="projects.opportunities.item5">Initiativer for inkludering, trivsel og aktiv deltakelse.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2 data-i18n="projects.contactCta.title">Vil du utforske et samarbeid?</h2>
+      <p data-i18n="projects.contactCta.text">Ta kontakt dersom du har en idé, søker en norsk partner eller ønsker å diskutere lokale eller internasjonale ungdomsinitiativer.</p>
+    </div>
+    <a class="btn btn-primary" href="/kontakt/" data-i18n="cta.contact">Kontakt oss</a>
+  </div>
+</section>
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="/assets/img/logo.png" alt="Youth Network logo" class="footer-logo">
+        <div>
+          <strong data-i18n="site.name">Youth Network</strong>
+          <p data-i18n="footer.location">Norge</p>
+        </div>
+      </div>
+      <p class="footer-tagline" data-i18n="site.tagline">Ungdomsarbeid • Erasmus+ • Bærekraft • Inkludering</p>
+    </div>
+    <div class="footer-details">
+      <p data-i18n="footer.oid">OID: E10341853</p>
+      <p data-i18n="footer.orgno">Org.nr: 931 931 121</p>
+      <p><a href="mailto:info@youthnetwork.no" data-i18n="footer.email">info@youthnetwork.no</a></p>
+    </div>
+<div class="footer-social">
+  <p class="footer-heading" data-i18n="footer.social">Sosiale medier</p>
+
+  <a 
+    href="https://www.instagram.com/youthnetwork.no/" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label="Youth Network Instagram"
+    data-i18n="footer.instagram">
+    Instagram
+  </a>
+
+  <a 
+    href="https://www.facebook.com/p/Youth-Network-61571332735462/" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label="Youth Network Facebook"
+    data-i18n="footer.facebook">
+    Facebook
+  </a>
+</div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span id="current-year">2026</span> <span data-i18n="site.name">Youth Network</span>. <span data-i18n="footer.rights">Alle rettigheter forbeholdt.</span></p>
+  </div>
+</footer>
+<script src="/assets/js/language.js?v=30"></script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
