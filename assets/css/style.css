@@ -612,3 +612,37 @@ body > .skiptranslate {
   background: #20242c;
   color: #fff;
 }
+/* Language flag buttons */
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-btn {
+  min-width: 48px;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag-svg {
+  width: 26px;
+  height: 18px;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.lang-divider {
+  font-weight: 800;
+  opacity: 0.45;
+}
+
+.lang-btn.active {
+  background: #20242c;
+  color: #fff;
+}
